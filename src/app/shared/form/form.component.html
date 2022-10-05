@@ -1,0 +1,59 @@
+<div><h4>Customer form</h4>
+<form novalidate [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+
+    <div>
+        <label for="name">
+          Name
+        </label>
+        <input id="name" type="text" formControlName="name" placeholder="Name (Required)">
+        <br><span *ngIf="Name?.invalid && (Name?.touched || Name?.dirty)" class="invalid-feedback">
+          <span *ngIf="Name?.errors?.['required']">
+            Please enter your name.
+          </span>
+        </span>
+      </div><br>
+    
+      <div>
+        <label for="email">
+          Email
+        </label>
+        <input id="Email" type="text" formControlName="email" placeholder="Please enter valid Email">
+        <br><span *ngIf="Email?.invalid && (Email?.touched || Email?.dirty)" class="invalid-feedback">
+          <span *ngIf="Email?.errors?.['email']">
+            Please enter your email.
+          </span>
+        </span>
+      </div><br>
+
+      <div>
+        <label for="accountNumber">
+          Account Number
+        </label>
+        <input id="accountNumber" type="number" formControlName="accountNumber" placeholder="Account Number (Required)">
+        <br><span *ngIf="AccountNumber?.invalid && (AccountNumber?.touched || AccountNumber?.dirty)" class="invalid-feedback">
+          <span *ngIf="AccountNumber?.errors?.['required']">
+            Please enter Account Number.
+          </span>
+        </span>
+      </div><br>
+
+      <div>
+        <label for="paymentAmount">
+          Payment Amount
+        </label>
+        <input id="paymentAmount" type="number" formControlName="paymentAmount" placeholder="Payment Amount (Required)">
+        <br><span *ngIf="PaymentAmount?.invalid && (PaymentAmount?.touched || PaymentAmount?.dirty)">
+          <span *ngIf="PaymentAmount?.errors?.['required']">
+            Please enter Payment Amount.
+          </span>
+          <span *ngIf="PaymentAmount?.errors?.['max']">
+            Payment amount exceeds account balance.
+          </span>
+        </span>
+      </div><br>
+
+      <br>
+    <button class="button" type="submit" [disabled]="!customerForm.valid">Submit</button>
+  
+  </form>
+</div>
