@@ -26,10 +26,12 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('Payment');
   });
 
-  it('should render title', () => {
+  it('should render the header', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('Payment app is running!');
+    
+    expect(compiled.innerText).toContain('Header');
+    expect(compiled.innerText).toContain('Footer');
   });
 });

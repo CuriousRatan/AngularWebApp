@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CustomerDetails } from '../Models/Customer';
 
 import { PaymentComponent } from './payment.component';
 
@@ -20,4 +21,12 @@ describe('PaymentComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('showDetails should log customer details to console', function(){
+    spyOn(window.console, 'log');
+    var mockCustomerDetails = new CustomerDetails();
+    component.showDetails(mockCustomerDetails);
+
+    expect(window.console.log).toHaveBeenCalled();
+  })
 });
