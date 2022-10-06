@@ -1,0 +1,31 @@
+@import "../styles.scss";
+
+.content {
+    @include g-layout__container;
+
+    &__sections {
+        @include g-layout__grid;
+    }
+
+    &__sub-title {
+        @include g-root__h3;
+    }
+
+    // Large Viewports
+    @media (min-width: 52rem) {
+
+        &__primary {
+            @include g-layout__grid__item--08;
+        }
+    }
+
+    // Small Viewports
+    @media (max-width: 52rem) {
+
+        &__primary {
+            @include g-layout__grid__item--12;
+        }
+
+    }
+
+}

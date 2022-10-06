@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
-  { path:"", component:PaymentComponent }
+  { path:"", component:PaymentComponent },
+  { path:"**", component:PaymentComponent }
 ];
 
 @NgModule({

@@ -4,7 +4,7 @@ import { CustomerDetails } from '../Models/Customer';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
-  styleUrls: ['./payment.component.sass']
+  styleUrls: ['./payment.component.scss']
 })
 export class PaymentComponent implements OnInit {
 
